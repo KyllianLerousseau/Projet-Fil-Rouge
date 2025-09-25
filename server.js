@@ -31,7 +31,7 @@ app.get("/creerCompte", (req, res) => {
     <form action="/submit" method="POST">
       <input type="text" name="name" placeholder="Votre nom" required>
       <input type="email" name="email" placeholder="Votre email" required>
-      <input type="password" name="password" place="Votre mot de passe" required>
+      <input type="password" name="password" placeholder="Votre mot de passe" required>
       <button type="submit">Envoyer</button>
     </form>
   `);
