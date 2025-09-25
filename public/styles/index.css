@@ -1,0 +1,55 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #0000d3;
+}
+
+.main-container {
+    margin: 10px auto;
+    width: 400px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #00007e;
+    border-radius: 12px;
+}
+
+h1{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+li {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.users-container {
+    width: 100%;
+    padding: 10px;
+}
+
+#usersList{
+    list-style: none;
+    text-align: left;
+    display: grid;
+    gap: 10px;    
+}
+
+.btnAccount{
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #333354;
+    color: white;
+}
+
+.btnAccount:hover{
+    background-color: #000029;
+}
