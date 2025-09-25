@@ -16,7 +16,7 @@ fetch("http://localhost:3000/api/users")
             li.textContent = `${user.name} | ${user.email} | `;
             usersList.appendChild(li);
 
-
+            
         });
     })
     .catch(error => {
