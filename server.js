@@ -28,21 +28,34 @@ app.get("/redirect", (req, res) => {
 
 app.get("/creerCompte", (req, res) => {
   res.send(`
-    <form action="/submit" method="POST">
-      <input type="text" name="name" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre email" required>
-      <input type="password" name="password" placeholder="Votre mot de passe" required>
-      <button type="submit">Envoyer</button>
-    </form>
+    <!DOCTYPE html>
+    <html lang="fr">
+      <head>
+        <meta charset="UTF-8">
+        <title>Créer un compte</title>
+        <link rel="stylesheet" href="/styles/signup.css">
+      </head>
+      <body>
+      <div class="form-container">
+        <form action="/submit" method="POST" class="form">
+          <input type="text" name="name" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre email" required>
+          <button class="submitBtn" type="submit">Envoyer</button>
+        </form>
+      </div>
+      <button class="backBtn" onclick="back()">Retour</button>
+      </body>
+    <script src="./back.js"></script>
+    </html>
   `);
 });
 
 app.post("/submit", (req, res) => {
     const { name, email } = req.body;
 
-    const sql = "INSERT INTO users (name, email) VALUES (?, ?)";
-    db.query(sql, [name, email], (err, result) => {
-        if(err) {
+    const sql = "INSERT INTO users (name, email) VALUES (?, ?, ?)";
+    db.query(sql, [name, email], (err, results) => {
+        if(err || email === email) {
             console.error(err);
             return res.send("Erreur lors de l'insertion dans la base de données !")
         }
